@@ -9,16 +9,21 @@ require_relative 'rest/methods'
 module Binance
   module Client
     class REST
-      BASE_URL = 'https://api.binance.com'.freeze
+      BASE_URL = ''
+      US_BASED = 'https://api.binance.us'
+      NON_US_BASED = 'https://api.binance.com'
 
-      def initialize(api_key: '', secret_key: '',
+      def initialize(api_key: '', secret_key: '', type: 'non_us_based',
                      adapter: Faraday.default_adapter)
+        url = (type == 'us_based') ? US_BASED : NON_US_BASED
+        BASE_URL.replace url
         @clients = {}
         @clients[:public]   = public_client adapter
         @clients[:verified] = verified_client api_key, adapter
         @clients[:signed]   = signed_client api_key, secret_key, adapter
         @clients[:withdraw] = withdraw_client api_key, secret_key, adapter
         @clients[:public_withdraw] = public_withdraw_client adapter
+        @clients[:dividend] = dividend_client api_key, secret_key, adapter        
       end
 
       METHODS.each do |method|
@@ -33,6 +38,7 @@ module Binance
 
       def self.add_query_param(query, key, value)
         query = query.to_s
+        query = query.dup if query.frozen?
         query << '&' unless query.empty?
         query << "#{Faraday::Utils.escape key}=#{Faraday::Utils.escape value}"
       end

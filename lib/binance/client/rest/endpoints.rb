@@ -31,8 +31,9 @@ module Binance
         deposit_address:  'v3/depositAddress.html',
         account_status:   'v3/accountStatus.html',
         system_status:    'v3/systemStatus.html',
-        withdraw_fee:     'v3/withdrawFee.html',
-        dust_log:         'v3/userAssetDribbletLog.html'
+        withdraw_fee:     'v3/assetDetail.html',
+        dust_log:         'v3/userAssetDribbletLog.html',
+        dividend_log:     'v1/asset/assetDividend'        
       }.freeze
     end
   end
