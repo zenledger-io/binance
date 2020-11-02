@@ -33,7 +33,12 @@ module Binance
         system_status:    'v3/systemStatus.html',
         withdraw_fee:     'v3/assetDetail.html',
         dust_log:         'v3/userAssetDribbletLog.html',
-        dividend_log:     'v1/asset/assetDividend'        
+        dividend_log:     'v1/asset/assetDividend',
+
+        # Fiat API Endpoints
+        fiat_deposit_history: 'v1/fiatpayment/query/deposit/history',      
+        fiat_withdraw_history: 'v1/fiatpayment/query/withdraw/history'
+          
       }.freeze
     end
   end

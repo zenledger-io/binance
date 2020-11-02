@@ -102,7 +102,13 @@ module Binance
           action: :get, endpoint: :dust_log },
         # dividend_log
         { name: :dividend_log, client: :dividend,
-          action: :get, endpoint: :dividend_log }
+          action: :get, endpoint: :dividend_log },
+        # fiat_deposit_history
+        { name: :fiat_deposit_history, client: :dividend,
+          action: :get, endpoint: :fiat_deposit_history },
+        # fiat_withdraw_history
+        { name: :fiat_withdraw_history, client: :dividend,
+          action: :get, endpoint: :fiat_withdraw_history }
       ].freeze
     end
   end
