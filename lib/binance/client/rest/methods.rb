@@ -77,22 +77,22 @@ module Binance
 
         # Withdraw API Methods
         # #withdraw!
-        { name: :withdraw!, client: :withdraw,
+        { name: :withdraw!, client: :dividend,
           action: :post, endpoint: :withdraw },
         # #deposit_history
-        { name: :deposit_history, client: :withdraw,
+        { name: :deposit_history, client: :dividend,
           action: :get, endpoint: :deposit_history },
         # #withdraw_history
-        { name: :withdraw_history, client: :withdraw,
+        { name: :withdraw_history, client: :dividend,
           action: :get, endpoint: :withdraw_history },
         # #deposit_address
-        { name: :deposit_address, client: :withdraw,
+        { name: :deposit_address, client: :dividend,
           action: :get, endpoint: :deposit_address },
         # #account_status
-        { name: :account_status, client: :withdraw,
+        { name: :account_status, client: :dividend,
           action: :get, endpoint: :account_status },
         # #system_status
-        { name: :system_status, client: :public_withdraw,
+        { name: :system_status, client: :dividend,
           action: :get, endpoint: :system_status },
         # #withdraw_fee
         { name: :withdraw_fee, client: :withdraw,

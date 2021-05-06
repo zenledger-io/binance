@@ -25,15 +25,15 @@ module Binance
         user_data_stream: 'v1/userDataStream',
 
         # Withdraw API Endpoints
-        withdraw:         'v3/withdraw.html',
-        deposit_history:  'v3/depositHistory.html',
-        withdraw_history: 'v3/withdrawHistory.html',
-        deposit_address:  'v3/depositAddress.html',
-        account_status:   'v3/accountStatus.html',
-        system_status:    'v3/systemStatus.html',
-        withdraw_fee:     'v3/assetDetail.html',
-        dust_log:         'v3/userAssetDribbletLog.html',
-        dividend_log:     'v1/asset/assetDividend'        
+        withdraw:         'v1/capital/withdraw/apply',
+        deposit_history:  'v1/capital/deposit/hisrec',
+        withdraw_history: 'v1/capital/withdraw/history',
+        deposit_address:  'v1/capital/deposit/address',
+        account_status:   'v1/account/status',
+        system_status:    'v1/system/status',
+        withdraw_fee:     'v1/assetDetail.html',
+        dust_log:         'v1/userAssetDribbletLog.html',
+        dividend_log:     'v1/asset/assetDividend'
       }.freeze
     end
   end
