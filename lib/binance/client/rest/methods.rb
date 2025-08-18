@@ -74,6 +74,12 @@ module Binance
         # #close_stream!
         { name: :close_stream!, client: :verified,
           action: :delete, endpoint: :user_data_stream },
+        # fiat_orders
+        #   Fiat deposits/withdrawals (transactionType: 0=deposit, 1=withdrawal)
+        { name: :fiat_orders, client: :signed,
+          action: :get, endpoint: :fiat_orders },
+        # funding_wallet
+        { name: :funding_wallet, client: :dividend, action: :post, endpoint: :funding_wallet },
 
         # Withdraw API Methods
         # #withdraw!

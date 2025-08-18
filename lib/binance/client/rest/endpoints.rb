@@ -33,7 +33,13 @@ module Binance
         system_status:    'v1/system/status',
         withdraw_fee:     'v1/assetDetail.html',
         dust_log:         'v1/userAssetDribbletLog.html',
-        dividend_log:     'v1/asset/assetDividend'
+        dividend_log:     'v1/asset/assetDividend',
+
+        # FIAT API Endpoints
+        fiat_orders: 'sapi/v1/fiat/orders',
+
+        # Fiat / Funding wallet
+        funding_wallet: 'sapi/v1/asset/get-funding-asset',
       }.freeze
     end
   end
