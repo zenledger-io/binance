@@ -106,9 +106,9 @@ module Binance
 
         # --- NEW (SAPI) ---
         # Fiat deposits/withdrawals (transactionType: 0=deposit, 1=withdrawal)
-        { name: :fiat_orders,   client: :signed, action: :get, endpoint: :fiat_orders,   normalize: :fiat_list },
-        # fiat_payments
-        { name: :fiat_payments, client: :signed, action: :get, endpoint: :fiat_payments, normalize: :fiat_list },
+        { name: :fiat_orders,       client: :dividend, action: :get,    endpoint: :fiat_orders },
+        # Fiat card buy/sell (transactionType: 0=buy, 1=sell)
+        { name: :fiat_payments,     client: :dividend, action: :get,    endpoint: :fiat_payments },
         # Funding wallet balances (Binance requires POST)
         { name: :funding_wallet,    client: :dividend, action: :post,   endpoint: :funding_wallet },
       ].freeze
