@@ -37,6 +37,8 @@ module Binance
 
         # FIAT API Endpoints
         fiat_orders: 'sapi/v1/fiat/orders',
+        fiat_payments: 'sapi/v1/fiat/payments',
+
 
         # Fiat / Funding wallet
         funding_wallet: 'sapi/v1/asset/get-funding-asset',

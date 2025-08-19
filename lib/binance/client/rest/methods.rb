@@ -74,12 +74,6 @@ module Binance
         # #close_stream!
         { name: :close_stream!, client: :verified,
           action: :delete, endpoint: :user_data_stream },
-        # fiat_orders
-        #   Fiat deposits/withdrawals (transactionType: 0=deposit, 1=withdrawal)
-        { name: :fiat_orders, client: :signed,
-          action: :get, endpoint: :fiat_orders },
-        # funding_wallet
-        { name: :funding_wallet, client: :dividend, action: :post, endpoint: :funding_wallet },
 
         # Withdraw API Methods
         # #withdraw!
@@ -108,7 +102,15 @@ module Binance
           action: :get, endpoint: :dust_log },
         # dividend_log
         { name: :dividend_log, client: :dividend,
-          action: :get, endpoint: :dividend_log }
+          action: :get, endpoint: :dividend_log },
+
+        # --- NEW (SAPI) ---
+        # Fiat deposits/withdrawals (transactionType: 0=deposit, 1=withdrawal)
+        { name: :fiat_orders,   client: :signed, action: :get, endpoint: :fiat_orders,   normalize: :fiat_list },
+        # fiat_payments
+        { name: :fiat_payments, client: :signed, action: :get, endpoint: :fiat_payments, normalize: :fiat_list },
+        # Funding wallet balances (Binance requires POST)
+        { name: :funding_wallet,    client: :dividend, action: :post,   endpoint: :funding_wallet },
       ].freeze
     end
   end
